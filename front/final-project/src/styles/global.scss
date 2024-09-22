@@ -1,0 +1,19 @@
+@import './darkModeVariables';
+@import './lightModeVariables';
+@import '../assets/fonts/shabnam-fonts';
+
+
+html,
+body,
+#root,
+button {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: "Shabnam", sans-serif;
+}
+
+::placeholder {
+  font-family: "Shabnam", sans-serif;
+}

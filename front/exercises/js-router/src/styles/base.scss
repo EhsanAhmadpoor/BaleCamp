@@ -1,0 +1,27 @@
+@import './variables';
+
+@font-face {
+    font-family: Alibaba;
+    src: url('../assets/alibaba.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: $font-family;
+    direction: rtl;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: $background-color;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.has-story .users-list-images {
+    border: 2px solid rgb(6, 195, 6);
+    padding: 2px;
+}

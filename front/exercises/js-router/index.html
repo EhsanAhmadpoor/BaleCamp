@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bale Router</title>
+    <link rel="stylesheet" href="src/styles/main.scss"/>
+  </head>
+  <body>
+    <div class="header">
+      <h1>بله کمپ</h1>
+      <hr/>
+    </div>
+    <div id="main-content" class="user-list">
+      <div class="stories"></div>
+      <div class="users"></div>
+    </div>
+    <div id="story-content" class="story-content">
+      <div class="story-header">
+        <div class="story-user">
+          <img src="" alt="Story User Avatar" id="story-user-avatar"/>
+          <span id="story-user-name"></span>
+        </div>
+        <img src="./src/assets/back.png" alt="back" id="story-back-button"/>
+      </div>
+      <div class="story-img">
+        <img src="" alt="Story Image" id="story-img">
+      </div>
+    </div>
+    <div id="profile-content" class="profile-content">
+      <div class="profile-header">
+        <img src="./src/assets/arrow-back.png" Id="arrow-back"/>
+      </div>
+      <div class="profile-details">
+        <div class="profile-avatar">
+          <img alt="Avatar" Id="profile-content-avatar-image"/>
+        </div>
+        <div class="profile-info">
+          <span Id="profile-content-info-name"></span>
+          <div class="profile-more-info">
+            <a Id="phone-number"></a>
+            <span Id="bio"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,247 @@
+.issueContainer {
+  width: 100%;
+  position: relative;
+}
+
+.messageVector {
+  position: absolute;
+  bottom: -7px;
+  left: -14px;
+  --issue-message-vector: var(--color-gray-10);
+}
+
+.selfMessageVector {
+  position: absolute;
+  bottom: -12px;
+  right: -14px;
+  --issue-self-message-vector: var(--color-green-10);
+}
+
+.issue {
+  padding: 16px 32px;
+  box-sizing: border-box;
+  border-radius: 24px;
+  background-color: var(--color-gray-10);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+
+  .header {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 8px;
+    font-weight: 500;
+
+    .type {
+      font-size: 14px;
+      line-height: 22px;
+      color: var(--color-blue-50);
+    }
+
+    .title {
+      font-size: 16px;
+      line-height: 24px;
+      color: var(--color-gray-500);
+    }
+
+    .titleByMe {
+      font-size: 16px;
+      line-height: 24px;
+      color: var(--color-text);
+    }
+  }
+
+  .headerFromBoard {
+    flex-direction: column;
+    direction: rtl;
+  }
+
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      direction: rtl;
+    }
+  }
+
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    .content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      direction: rtl;
+      gap: 24px;
+      --issue-open-icon: var(--color-gray-400);
+      --issue-open-icon-sentByMe: var(--color-text);
+
+
+      .issueText {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+        color: var(--color-gray-500);
+        max-width: 248px;
+        line-clamp: 2;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .issueTextByMe {
+        max-width: 248px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+        color: var(--color-text);
+
+        line-clamp: 2;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .tags {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 8px;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 20px;
+      color: var(--color-blue-50);
+    }
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+
+    .reactions {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 8px;
+
+
+      .like,
+      .disslike {
+        border-radius: 20px;
+        padding: 4px 8px;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        gap: 3px;
+        background-color: var(--color-gray-20);
+        color: var(--color-gray-500);
+        cursor: pointer;
+      }
+
+      .numberOfReactions {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 20px;
+      }
+
+      .likeInIssueSentByMe,
+      .disslikeInIssueSentByMe {
+        border-radius: 20px;
+        padding: 4px 8px;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        gap: 3px;
+        background-color: var(--color-gray-40);
+        color: var(--color-gray-500);
+        cursor: pointer;
+      }
+
+      .selected {
+        border: solid 1px var(--color-green-60);
+        background-color: var(--color-green-10);
+        color: var(--color-text);
+      }
+    }
+
+    .info {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 16px;
+
+      .status {
+        --issue-Done-icon: var(--color-green-50);
+        --issue-Pending-icon: var(--color-gray-200);
+        --issue-InProgress-icon: var(--color-gray-200);
+        --issue-Close-icon: var(--color-gray-200);
+
+        --issue-Done-icon-sentByMe: var(--color-text);
+        --issue-Pending-icon-sentByMe: var(--color-text);
+        --issue-InProgress-icon-sentByMe: var(--color-text);
+        --issue-Close-icon-sentByMe: var(--color-text);
+        display: flex;
+        align-items: center;
+      }
+
+      .date {
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 20px;
+        color: var(--color-gray-500);
+        direction: rtl;
+      }
+
+      .dateByMe {
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 20px;
+        color: var(--color-text);
+        direction: rtl;
+      }
+
+      .comments {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 4.5px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 20px;
+        color: var(--color-gray-500);
+        --issue-comment-icon: var(--color-gray-500);
+
+      }
+
+      .commentsByMe {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 4.5px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 20px;
+        color: var(--color-text);
+        --issue-comment-icon: var(--color-text);
+      }
+    }
+  }
+
+}
+
+.selfIssue {
+  background-color: var(--color-green-10);
+}

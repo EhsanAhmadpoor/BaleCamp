@@ -1,0 +1,61 @@
+@import './variables';
+
+.profile-content {
+  margin-top: 77.6px;
+  display: flex;
+  flex-direction: row;
+
+  .profile-header {
+    display: flex;
+    padding: 10px;
+
+    #arrow-back {
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  .profile-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .profile-avatar {
+      #profile-content-avatar-image {
+        height: 97px;
+        width: 97px;
+        padding: 3px;
+        border: 2px solid $highlight-color;
+        border-radius: 50%;
+      }
+    }
+
+    .profile-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 20px;
+
+      #profile-content-info-name {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+
+      .profile-more-info {
+        direction: ltr;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+
+        #phone-number {
+          color: $primary-color;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

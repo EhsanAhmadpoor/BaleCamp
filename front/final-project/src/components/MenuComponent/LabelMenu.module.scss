@@ -1,0 +1,57 @@
+// ProfileMenu.module.scss
+.profileMenu {
+  position: absolute;
+  top: 28px;
+  right: -0.5px;
+  width: 136px;
+  height: 98px;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-sizing: border-box;
+  background-color: var(--color-gray-10);
+  box-shadow: 0px 3px 12px 0px #0000001A;
+  z-index: 100;
+
+  .changeProf span {
+    color: var(--color-gray-400);
+  }
+
+  .logout span {
+    color: var(--color-red-50);
+  }
+
+  .changeProf,
+  .logout {
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24.61px;
+  }
+
+  button {
+    width: 116px;
+    background-color: var(--color-gray-10);
+    border: none;
+    cursor: pointer;
+
+    :hover {
+      border-radius: 5px;
+      background-color: var(--color-gray-40);
+    }
+  }
+
+  button div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    gap: 10px;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+}

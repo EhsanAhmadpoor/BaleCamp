@@ -1,0 +1,49 @@
+// example1.js
+
+output:
+start
+end
+resolve
+settimeout
+
+why?:
+because at first the console.log("start") is put in the call
+which logs start
+then the settimeout web api is put in the call stack and then to the
+web api which instantly is put in the macro task queue
+then the promise is put in the call stack and instantly is resolved and
+is put in the micro task queue.
+after than the console.log("end") is put in call stack and then logs end
+then the event loop checks if the call stack is empty after that it
+checks micro task queue and puts console.log("resolve") in the call
+stack and resolve is logged.
+after the micro task is empty the event loop checks macro task queue
+and puts console.log("setTimeout") in the call stack which logs setTimeout
+end of program
+
+//example2.js
+
+1
+2
+4
+3
+timerstart
+timerend
+success
+
+why?:
+in the promise constructor execution the console.log(1) is pushed to the
+call stack and logs 1
+then the setTimeout call back is pushed to the macro task queue immediately
+then the console.log(2) in promise constructor will be executed and 
+logs 2
+then the promise.then call back is waiting for the resolving of the promise
+then the requestAnimationFrame call back is pushed to micro task queue
+then console.log(4) is pushed to call stack and is executed
+then the requestAnimationFrame call back is pushed from micro task queue
+to call stack and logs 3
+then the setTimeout call back is pushed from macro task queue to call stack
+and then the timerStart is logged
+then the promised is resolved and the call back is pushed to micro task queue
+then the console.log("timerend") is executed in the call stack and logs timer end
+then the console.log("success") is pushed from micro task queue to call stack and is executed

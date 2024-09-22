@@ -1,0 +1,16 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "driver": "PostgreSQL",
+      "name": "Soosk",
+      "database": "sooskdb",
+      "username": "postgres",
+      "password": "password"
+    }
+  ],
+  "sqltools.results.reuseTabs": "connection",
+}

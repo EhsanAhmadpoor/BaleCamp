@@ -1,0 +1,202 @@
+.signUpPage {
+  margin: 0;
+  background-color: var(--color-bg);
+  width: 100%;
+  height: 100%;
+  padding: 0px 68px;
+  box-sizing: border-box;
+}
+
+.outerContainer {
+
+  position: relative;
+  background-color: var(--color-gray-20);
+  height: 100%;
+  width: 100%;
+  padding: 110px 64px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.homeIcon {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  position: absolute;
+  top: 30px;
+  right: 44px;
+  --home-icon-fill: var(--color-bg);
+
+  :hover {
+    cursor: pointer;
+  }
+}
+
+.innerContainer {
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--color-gray-00);
+  border-radius: 40px;
+  display: flex;
+  flex-direction: row;
+}
+
+.imageContainer {
+  width: 50%;
+}
+
+.loginPageImage {
+  border-radius: 40px 0px 0px 40px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.formContainer {
+  border-radius: 40px 0px 0px 40px;
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+  overflow: auto;
+}
+
+.formContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  gap: 24px;
+}
+
+.appName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 35.16px;
+  gap: 6px;
+  color: var(--color-gray-500);
+}
+
+.kafshdoozak {
+  width: 34px;
+  height: 34px;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.inputs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px; // or 16
+}
+
+.nameInput,
+.repeatPasswordInput,
+.emailInput,
+.passwordInput {
+  max-width: 336px;
+  width: 100%;
+  height: 54px;
+  border: 1px solid var(--color-gray-30);
+  padding: 12px;
+  border-radius: 14px;
+  font-size: 16px;
+  color: var(--color-gray-300);
+  font-weight: 400;
+  padding: 25px;
+  box-sizing: border-box;
+  text-align: right;
+  background-color: var(--color-gray-00);
+
+  &:focus {
+    border-color: var(--color-blue-50);
+    outline: none;
+  }
+}
+
+
+.customLabel {
+  font-size: 14px;
+  color: var(--color-gray-300);
+  background-color: var(--color-gray-00);
+  padding: 0 8px;
+  position: absolute;
+  top: -9px;
+  right: 9px;
+  font-weight: 400;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputWrapper {
+  max-width: 336px;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+.signUp {
+  max-width: 336px;
+  height: 54px;
+  background-color: var(--color-blue-50);
+  border: none;
+  border-radius: 14px;
+  color: var(--color-gray-00);
+  font-size: 18px;
+  font-weight: 800px;
+  line-height: 26px;
+  cursor: pointer;
+}
+
+.login {
+  width: 155px;
+  height: 33px;
+  border: none;
+  background-color: var(--color-gray-00);
+  color: var(--color-blue-50);
+  font-family: Shabnam, sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.baleLogo {
+  --bale-icon-fill: var(--color-gray-200);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error {
+  color: var(--color-red-50);
+  padding: 0;
+  margin: 0;
+  font-size: 11px;
+  // margin-bottom: 16px;
+  // text-align: center;
+}

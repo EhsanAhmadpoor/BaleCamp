@@ -1,0 +1,42 @@
+version: "3.7"
+services:
+  server:
+    image: aminkhp/soosk:0.1.7
+    depends_on:
+      - db
+    ports:
+      - 3000:3000
+    environment:
+      - JWT_Secret="secret:)"
+      - PGHOST=db
+      - PGUSER=postgres
+      - PGDATABASE=sooskdb
+      - PGPASSWORD=password
+      - PGPORT=5432
+      - DATABASE_URL=postgresql://postgres:password@db:5432/sooskdb?schema=public
+      - UploadsDir=/uploads
+    volumes:
+      - uploads:/uploads
+    networks:
+      - soosk_network
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    ports:
+      - "5432:5432"
+    volumes:
+      - db:/var/lib/postgresql/data
+    networks:
+      - soosk_network
+
+volumes:
+  db:
+    driver: local
+  uploads:
+    driver: local
+
+networks:
+  soosk_network:
+

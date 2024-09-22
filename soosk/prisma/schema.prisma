@@ -1,0 +1,137 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["views"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id Int @id @default(autoincrement())
+
+  name     String
+  verified Boolean
+  email    String
+  password Bytes
+  role     UserRole
+
+  avatar        AvatarFile?
+  issue         Issue[]
+  votes         Vote[]
+  comments      Comment[]
+  uploadedFiles File[]
+}
+
+enum UserRole {
+  Normal
+  Admin
+  Manager
+}
+
+enum IssueStatus {
+  Pending
+  InProgress
+  Done
+}
+
+enum IssueType {
+  Bug
+  Suggestion
+}
+
+enum VoteType {
+  Up
+  Down
+}
+
+model Vote {
+  id Int @id @default(autoincrement())
+
+  type    VoteType
+  date    DateTime
+  userId  Int
+  issueId Int
+
+  user  User  @relation(fields: [userId], references: [id])
+  issue Issue @relation(fields: [issueId], references: [id])
+}
+
+model Comment {
+  id Int @id @default(autoincrement())
+
+  text    String
+  date    DateTime
+  userId  Int
+  issueId Int
+
+  user  User  @relation(fields: [userId], references: [id])
+  issue Issue @relation(fields: [issueId], references: [id])
+}
+
+model Label {
+  id Int @id @default(autoincrement())
+
+  name   String  @unique
+  color  Int
+  issues Issue[]
+}
+
+model Issue {
+  id Int @id @default(autoincrement())
+
+  title       String
+  description String
+  status      IssueStatus
+  date        DateTime
+  type        IssueType
+  published   Boolean
+  reviewed    Boolean
+
+  votesDiff    Int         @default(0)
+  upVotes      Int         @default(0)
+  downVotes    Int         @default(0)
+
+  votes    Vote[]
+  comments Comment[]
+  labels   Label[]
+  files    IssueFile[]
+
+  user   User @relation(fields: [userId], references: [id])
+  userId Int
+}
+
+model File {
+  id Int @id @default(autoincrement())
+
+  name     String
+  size     Int
+  mimeType String
+  path     String
+
+  uploaderId Int
+  user       User @relation(fields: [uploaderId], references: [id])
+
+  issueFile  IssueFile?
+  avatarFile AvatarFile?
+}
+
+model IssueFile {
+  fileId Int  @id()
+  file   File @relation(fields: [fileId], references: [id])
+
+  issueId Int
+  issue   Issue? @relation(fields: [issueId], references: [id])
+}
+
+model AvatarFile {
+  userId Int  @id()
+  user   User @relation(fields: [userId], references: [id])
+
+  fileId Int  @unique
+  file   File @relation(fields: [fileId], references: [id])
+}

@@ -1,0 +1,90 @@
+.playing-div {
+  margin-top: 19.53px;
+  @include flex-center(column, $align: center);
+  gap: 12px;
+  max-width: 368px;
+  width: 100%;
+  padding: 0 23px;
+  box-sizing: border-box;
+
+  .playing-cover {
+    width: 216px;
+    height: 216px;
+    border-radius: 12px;
+  }
+
+  .playing-track {
+    @include flex-center(column, $justify: center);
+    width: 100%;
+    gap: 8px;
+
+    .playing-track-info {
+      @include flex-center(column, $justify: center, $align: center);
+      width: 100%;
+
+      .title {
+        @include text-style(700, 24px, $primary-color);
+      }
+
+      .artist {
+        @include text-style(800, 15px, $artist-second-page-top);
+        letter-spacing: -4%;
+      }
+    }
+
+    .timeline {
+      @include flex-center(column);
+      width: 100%;
+      gap: 2px;
+      width: 100%;
+
+      .progress-bar {
+        width: 100%;
+        height: 11px;
+      }
+
+      .time {
+        @include flex-center(row, $justify: space-between);
+        width: 100%;
+        height: 14px;
+
+        .passed,
+        .remained {
+          @include text-style(800, 11px, $duration);
+        }
+      }
+    }
+
+    .controls {
+      @include flex-center(row, $justify: space-between, $align: center);
+      width: 100%;
+
+      .shuffle-div .shuffle {
+        height: 24px;
+        width: 24px;
+        @include flex-center(column, $align: center);
+      }
+
+      .repeat-div .repeat {
+        height: 24px;
+        width: 24px;
+        @include flex-center(column, $align: center);
+      }
+
+      .track-controls {
+        @include flex-center(row, $align: center);
+        gap: 32px;
+
+        .previous .next {
+          height: 24px;
+          width: 24px;
+        }
+        
+        .pause {
+          height: 40px;
+          width: 40px;
+        }
+      }
+    }
+  }
+}

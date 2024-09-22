@@ -1,0 +1,13 @@
+less filename
+
+this command opens a window which we
+can use keyboard to move around:
+
+space: move forward one screen
+b: move back one screen
+enter: move forward one line
+y: move backward one line
+/pattern: search with an specific pattern
+n: go forward in search
+N: go backward in search
+q: quit less window

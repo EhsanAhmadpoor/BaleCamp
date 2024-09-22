@@ -1,0 +1,11 @@
+.not-playing-image-div {
+  margin-top: 80.66px;
+  width: 100%;
+  @include flex-center(column, $align: center);
+  flex-shrink: 0;
+
+  .not-playing-image {
+    width: 343px;
+    height: 259.87px;
+  }
+}

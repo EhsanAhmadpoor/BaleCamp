@@ -1,0 +1,11 @@
+.baletify-logo-div {
+  margin-top: 24px;
+  width: 100%;
+  @include flex-center(column, $align: center);
+  flex-shrink: 0;
+
+  .baletify-logo {
+    width: 100px;
+    height: 26.47px;
+  }
+}

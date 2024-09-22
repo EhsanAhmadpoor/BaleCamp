@@ -1,0 +1,13 @@
+output:
+useLayoutEffect
+useEffect
+because useLayoutEffect is asynchronous and useEffect
+is synchronous meaning useLayoutEffect stops the whole 
+code from execution until it executes itself
+but useEffect doesn't. (useLayoutEffect runs before rendering.
+useEffect runs after rendering)
+if we want to know the scroll position before the page is
+rendered and after the dom is manipulated then we should
+use useLayoutEffect because it is more accurate and precise
+cause it can read the scroll position and do whatever we want
+before another render.

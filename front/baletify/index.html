@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/views/main.scss" />
+    <title>Baletify</title>
+  </head>
+  <body>
+    <div class="main-div">
+      <div class="baletify-logo-div">
+        <img class="baletify-logo" alt="logo" src="src/assets/images/Logo.png"/>
+      </div>
+      <div class="not-playing-div">
+        <div class="not-playing-image-div">
+          <img class="not-playing-image" alt="not playing image" src="src/assets/images/not-playing-image.png"/>
+        </div>
+      </div>
+      <div class="playing-div" style="display: none;">
+        <img id="playing-cover" class="playing-cover" alt="playing cover" src="https://vmusic.ir/wp-content/uploads/2022/02/Frozen-Silence-Emotion-2022-225x225.jpg"/>
+        <div id="playing-track" class="playing-track">
+          <div class="playing-track-info">
+            <span id="playing-title" class="title"></span>
+            <span id="playing-artist" class="artist"></span>
+          </div>
+          <div class="timeline">
+            <audio style="display: none;" class="progress-bar" id="audio-element" controls src=""></audio>
+            <input type="range" class="progress-bar" id="progress-bar" min="0" max="100" value="0">
+            <div class="time">
+              <span class="passed">0:00</span>
+              <span class="remained">-0:00</span>
+            </div>
+          </div>
+          <div class="controls">
+            <div class="shuffle-div">
+              <img id="shuffle-button" class="shuffle" alt="shuffle" src="src/assets/images/no-shuffle.png"/>
+            </div>
+            <div class="track-controls">
+              <img id="previous-button" class="previous" alt="previous" src="src/assets/images/previous.png"/>
+              <img id="play-pause-button" class="pause" alt="pause" src="src/assets/images/pause.png"/>
+              <img id="next-button" class="next" alt="next" src="src/assets/images/next.png"/>
+            </div>
+            <div class="repeat-div">
+              <img id="repeat-button" class="repeat" alt="repeat" src="src/assets/images/Repeat.svg"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="track-list">
+      </div>
+    </div>
+    <script type="module" src="src/main.ts"></script>
+  </body>
+</html>

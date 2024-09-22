@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'PlusJakartaSans';
+  src: url('../../assets/fonts/PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Alibaba';
+  src: url('../../assets/fonts/ALIBABA-REGULAR.TTF') format('truetype');
+}
+
+$primary-color: #FFFFFF;
+$artist-first-page: #B3B3B3;
+$duration : #BABABA;
+$artist-second-page-top: #BBBBBA;
+$artist-second-page: #B3B3B3;
+$background-color: #121212;
+$highlight-color: #1D1D1D;
+$font-family: 'Alibaba'; //why jakarta doesn't work?

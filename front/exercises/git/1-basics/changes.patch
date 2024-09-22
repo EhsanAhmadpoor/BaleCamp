@@ -1,0 +1,14 @@
+diff --git a/fileB.txt b/fileB.txt
+new file mode 100644
+index 0000000..e52a6bf
+--- /dev/null
++++ b/fileB.txt
+@@ -0,0 +1 @@
++Hello from file B!
+diff --git a/fileC.txt b/fileC.txt
+new file mode 100644
+index 0000000..ba02fe1
+--- /dev/null
++++ b/fileC.txt
+@@ -0,0 +1 @@
++Hello from file C!

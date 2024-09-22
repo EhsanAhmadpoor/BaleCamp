@@ -1,0 +1,11 @@
+build image:
+  image: docker
+  services:
+    - docker:dind
+  rules:
+    - if: '$CI_COMMIT_REF_NAME == "main"'
+  script:
+    - echo $CI_ARTIFACTORY_PASSWORD | docker login -u $CI_ARTIFACTORY_USER --password-stdin docker.io
+    - cd docs/
+    - docker build -t docsinternshipble/bootcamp-docs:$CI_PIPELINE_ID .
+    - docker push docsinternshipble/bootcamp-docs:$CI_PIPELINE_ID

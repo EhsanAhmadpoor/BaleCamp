@@ -1,0 +1,25 @@
+// 11-1.js
+
+undefined
+20
+10
+
+why?:
+first the global variable x is declared and initialized with 10
+then the variable x is hoisted in the top of example function scope but 
+its not initialized so then it logs undefined. then its initialized with 20
+and logs 20
+after then it logs 10 because x variable in global scope is not modified
+by example function
+
+// 11-2.js
+
+Happy birthday undefined
+20
+Happy birthday 20
+21
+
+why?:
+arrow functions do not have their own this context. so there is no age in
+global context which logs undefined.
+the rest is obvious
